@@ -42,8 +42,8 @@ namespace Soomla.Store {
 		{
 		}
 
-#if UNITY_WP8 && !UNITY_EDITOR
-		public VirtualGood(SoomlaWpStore.domain.virtualGoods.VirtualGood wpVirtualGood)
+#if (UNITY_WP8 || UNITY_WSA) //&& !UNITY_EDITOR
+        public VirtualGood(SoomlaWpStore.domain.virtualGoods.VirtualGood wpVirtualGood)
             : base(wpVirtualGood)
 		{
 		}

@@ -41,7 +41,7 @@ namespace Soomla.Store
 					_instance = new VirtualCurrencyStorageAndroid();
 					#elif UNITY_IOS && !UNITY_EDITOR
 					_instance = new VirtualCurrencyStorageIOS();
-                    #elif UNITY_WP8 && !UNITY_EDITOR
+                    #elif (UNITY_WP8 || UNITY_WSA) //&& !UNITY_EDITOR
 					_instance = new VirtualCurrencyStorageWP();
                     #else
                                           _instance = new VirtualCurrencyStorage();

@@ -81,8 +81,8 @@ namespace Soomla.Store {
 			this.NextItemId = nextItemId;
 		}
 
-#if UNITY_WP8 && !UNITY_EDITOR
-		public UpgradeVG(SoomlaWpStore.domain.virtualGoods.UpgradeVG wpUpgradeVG)
+#if (UNITY_WP8 || UNITY_WSA) //&& !UNITY_EDITOR
+        public UpgradeVG(SoomlaWpStore.domain.virtualGoods.UpgradeVG wpUpgradeVG)
             : base(wpUpgradeVG)
 		{
             GoodItemId = wpUpgradeVG.getGoodItemId();

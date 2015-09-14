@@ -48,8 +48,8 @@ namespace Soomla.Store {
 		{
 		}
 
-#if UNITY_WP8 && !UNITY_EDITOR
-		protected VirtualItem(SoomlaWpCore.SoomlaEntity<SoomlaWpStore.domain.VirtualItem> wpVirtualItem)
+#if (UNITY_WP8 || UNITY_WSA) //&& !UNITY_EDITOR
+        protected VirtualItem(SoomlaWpCore.SoomlaEntity<SoomlaWpStore.domain.VirtualItem> wpVirtualItem)
             : base(wpVirtualItem.GetId(),wpVirtualItem.GetName(),wpVirtualItem.GetDescription())
             {
 		}

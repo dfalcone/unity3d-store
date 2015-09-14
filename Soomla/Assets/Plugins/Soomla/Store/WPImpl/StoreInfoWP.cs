@@ -17,7 +17,7 @@ using System.Collections.Generic;
 using System;
 using System.Runtime.InteropServices;
 
-#if UNITY_WP8 && !UNITY_EDITOR
+#if (UNITY_WP8 || UNITY_WSA) //&& !UNITY_EDITOR
 using SoomlaWpStore;
 using SoomlaWpStore.data;
 #endif
@@ -36,7 +36,7 @@ namespace Soomla.Store {
 	/// </summary>
 	public class StoreInfoWP : StoreInfo {
 
-#if UNITY_WP8 && !UNITY_EDITOR
+#if (UNITY_WP8 || UNITY_WSA) //&& !UNITY_EDITOR
 
         /// <summary>
         /// Initializes <c>StoreInfo</c>.

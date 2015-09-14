@@ -34,7 +34,7 @@ namespace Soomla.Store
 					_instance = new SoomlaStoreAndroid();
 					#elif UNITY_IOS && !UNITY_EDITOR
 					_instance = new SoomlaStoreIOS();
-                    #elif UNITY_WP8 && !UNITY_EDITOR
+                    #elif (UNITY_WP8 || UNITY_WSA) // && !UNITY_EDITOR
 					_instance = new SoomlaStoreWP();
                     #else
                     _instance = new SoomlaStore();
@@ -76,14 +76,14 @@ namespace Soomla.Store
 			StoreInfo.SetStoreAssets(storeAssets);
 
 			instance._loadBillingService();
-			
-			#if UNITY_IOS
+
+#if UNITY_IOS
 			// On iOS we only refresh market items
 			instance._refreshMarketItemsDetails();
 #elif UNITY_ANDROID
 			// On Android we refresh market items and restore transactions
 			instance._refreshInventory();
-#elif UNITY_WP8
+#elif (UNITY_WP8 || UNITY_WSA) //|| UNITY_WSA
             instance._refreshInventory();
             
 #endif

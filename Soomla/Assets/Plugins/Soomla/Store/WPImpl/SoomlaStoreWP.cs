@@ -26,10 +26,10 @@ namespace Soomla.Store {
 	/// </summary>
 	public class SoomlaStoreWP : SoomlaStore {
 
-#if UNITY_WP8 && !UNITY_EDITOR
-		/// <summary>
-		/// Load the billing service.
-		/// </summary>
+#if (UNITY_WP8 || UNITY_WSA) //&& !UNITY_EDITOR
+        /// <summary>
+        /// Load the billing service.
+        /// </summary>
         protected override void _loadBillingService()
         {
             SoomlaWpStore.StoreConfig.STORE_TEST_MODE = StoreSettings.WP8TestMode;

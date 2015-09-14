@@ -41,7 +41,7 @@ namespace Soomla.Store
 					_instance = new VirtualGoodsStorageAndroid();
 					#elif UNITY_IOS && !UNITY_EDITOR
 					_instance = new VirtualGoodsStorageIOS();
-                    #elif UNITY_WP8 && !UNITY_EDITOR
+                    #elif (UNITY_WP8 || UNITY_WSA) //&& !UNITY_EDITOR
 					_instance = new VirtualGoodsStorageWP();
                     #else
                     _instance = new VirtualGoodsStorage();

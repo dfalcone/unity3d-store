@@ -15,7 +15,7 @@
 using UnityEngine;
 using System;
 using System.Runtime.InteropServices;
-#if UNITY_WP8 && !UNITY_EDITOR
+#if (UNITY_WP8 || UNITY_WSA) //&& !UNITY_EDITOR
 using SoomlaWpStore.events;
 using SoomlaWpCore.events;
 using SoomlaWpCore.util;
@@ -25,8 +25,8 @@ namespace Soomla.Store {
 
 	public class StoreEventPusherWP : StoreEvents.StoreEventPusher {
 
-#if UNITY_WP8 && !UNITY_EDITOR
-		protected override void _pushEventSoomlaStoreInitialized(SoomlaStoreInitializedEvent _Event) {
+#if (UNITY_WP8 || UNITY_WSA) //&& !UNITY_EDITOR
+        protected override void _pushEventSoomlaStoreInitialized(SoomlaStoreInitializedEvent _Event) {
             pushEvent(_Event);
 		}
 		protected override void _pushEventUnexpectedStoreError(UnexpectedStoreErrorEvent _Event) {

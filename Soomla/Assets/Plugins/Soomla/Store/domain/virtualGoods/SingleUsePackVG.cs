@@ -66,8 +66,8 @@ namespace Soomla.Store {
 			this.GoodAmount = amount;
 		}
 
-#if UNITY_WP8 && !UNITY_EDITOR
-		public SingleUsePackVG(SoomlaWpStore.domain.virtualGoods.SingleUsePackVG wpSingleUsePackVG)
+#if (UNITY_WP8 || UNITY_WSA) //&& !UNITY_EDITOR
+        public SingleUsePackVG(SoomlaWpStore.domain.virtualGoods.SingleUsePackVG wpSingleUsePackVG)
             : base(wpSingleUsePackVG)
 		{
             GoodItemId = wpSingleUsePackVG.getGoodItemId();

@@ -107,8 +107,8 @@ namespace Soomla.Store {
 			this.Equipping = equippingModel;
 		}
 
-#if UNITY_WP8 && !UNITY_EDITOR
-		public EquippableVG(SoomlaWpStore.domain.virtualGoods.EquippableVG wpEquippableVG)
+#if (UNITY_WP8 || UNITY_WSA) //&& !UNITY_EDITOR
+        public EquippableVG(SoomlaWpStore.domain.virtualGoods.EquippableVG wpEquippableVG)
             : base(wpEquippableVG)
 		{   
 			switch(wpEquippableVG.ToString()){

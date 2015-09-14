@@ -50,8 +50,8 @@ namespace Soomla.Store {
 		{
 		}
 
-#if UNITY_WP8 && !UNITY_EDITOR
-		public SingleUseVG(SoomlaWpStore.domain.virtualGoods.SingleUseVG suVG)
+#if (UNITY_WP8 || UNITY_WSA) //&& !UNITY_EDITOR
+        public SingleUseVG(SoomlaWpStore.domain.virtualGoods.SingleUseVG suVG)
             : base(suVG)
 		{
 		}

@@ -14,7 +14,7 @@
 
 using UnityEngine;
 using System;
-#if UNITY_WP8 && !UNITY_EDITOR
+#if (UNITY_WP8 || UNITY_WSA) //&& !UNITY_EDITOR
 using SoomlaWpStore;
 #endif
 
@@ -24,9 +24,9 @@ namespace Soomla.Store
 	/// abstract <c>VirtualCurrencyStorage</c> for Android.
 	/// </summary>
 	public class VirtualCurrencyStorageWP : VirtualCurrencyStorage {
-#if UNITY_WP8 && !UNITY_EDITOR
+#if (UNITY_WP8 || UNITY_WSA) //&& !UNITY_EDITOR
 
-		protected override int _getBalance(VirtualItem item) {
+        protected override int _getBalance(VirtualItem item) {
 			int retBalance;
             retBalance = SoomlaWpStore.data.StorageManager.getVirtualCurrencyStorage().getBalance(SoomlaWpStore.data.StoreInfo.getVirtualItem(item.ItemId));			
 			return retBalance;
